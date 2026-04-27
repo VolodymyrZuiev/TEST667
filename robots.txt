@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://prodexlabs-tech.com/sitemap.xml

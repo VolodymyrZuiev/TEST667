@@ -2,87 +2,174 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prodex Labs Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Prodex Labs Tech — High-End Product Systems</title>
+    <meta name="description" content="Rapid MVP development and product validation for early-stage systems.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Prodex Labs Tech — Early-Stage Systems">
+    <meta property="og:description" content="We turn concepts into working systems quickly.">
+    <meta property="og:image" content="og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
-    <canvas id="systemCanvas"></canvas>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <canvas id="mainCanvas"></canvas>
+    <div class="mesh-gradient"></div>
     <div class="noise-overlay"></div>
-    <div class="grid-overlay"></div>
 
     <nav class="premium-nav">
-        <div class="logo">Prodex<span>.</span>Labs</div>
+        <div class="logo magnetic" id="logoToTop" data-dist="10">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+            <span class="logo-text">PRODEX<span>LABS</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#what">Services</a>
+            <a href="#experience">Track record</a>
+            <a href="#process">Process</a>
+        </div>
         <div class="nav-right">
-            <a href="#contact" class="btn-primary">Contact</a>
+            <a href="#contact" class="btn-primary magnetic" data-dist="20">Contact</a>
         </div>
     </nav>
 
-    <section id="hero" class="hero-canvas">
-        <div class="hero-content">
-            <div class="badge reveal">
-                <span class="dot"></span> Infrastructure · Prototyping · Product Systems
-            </div>
-            <h1 class="hero-h1 reveal delay-1">
-                Product prototypes<br>
-                and <span class="highlight">early-stage</span><br>
-                systems.
-            </h1>
-            <p class="hero-sub reveal delay-2">
-                Prodex Labs Tech helped teams validate ideas through fast product builds. We turned concepts into working systems — quickly.
-            </p>
-            <div class="reveal delay-3">
-                <a href="#contact" class="btn-demo-large">
-                    <span class="icon"></span> Start discussion
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="what" class="services-section">
-        <div class="section-header reveal">
-            <p class="sec-label">/ Services</p>
-            <h2 class="sec-title">What we did</h2>
-        </div>
-
-        <div class="services-list">
-            <div class="service-row reveal">
-                <div class="row-num">/01</div>
-                <div class="row-content">
-                    <h3 class="row-title">MVP Development</h3>
-                    <p class="row-desc">We built lean, functional MVPs that let teams test real hypotheses with real users — fast.</p>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="badge reveal">
+                    <span class="dot"></span> Infrastructure · Prototyping · Systems
+                </div>
+                <h1 class="hero-h1 reveal delay-1">Product prototypes<br>and <span class="highlight">early-stage</span><br>systems.</h1>
+                <p class="hero-sub reveal delay-2">Prodex Labs Tech helped teams validate ideas through fast product builds. We turned concepts into working systems — quickly.</p>
+                <div class="reveal delay-3">
+                    <a href="#contact" class="btn-main magnetic">Start discussion</a>
                 </div>
             </div>
+        </section>
 
-            <div class="service-row reveal">
-                <div class="row-num">/02</div>
-                <div class="row-content">
-                    <h3 class="row-title">Prototyping</h3>
-                    <p class="row-desc">Interactive and functional prototypes to validate UX and architecture before full investment.</p>
+        <section id="what" class="services-section">
+            <div class="section-header reveal">
+                <p class="sec-label">/ Services</p>
+                <h2 class="sec-title">What we did</h2>
+            </div>
+            <div class="services-list">
+                <div class="service-row reveal">
+                    <div class="row-num">/01</div>
+                    <div class="row-content">
+                        <h3 class="row-title">MVP Development</h3>
+                        <p class="row-desc">We built lean, functional MVPs that let teams test real hypotheses with real users — fast.</p>
+                    </div>
+                </div>
+                <div class="service-row reveal">
+                    <div class="row-num">/02</div>
+                    <div class="row-content">
+                        <h3 class="row-title">Prototyping</h3>
+                        <p class="row-desc">Interactive and functional prototypes to validate UX and architecture before full investment.</p>
+                    </div>
+                </div>
+                <div class="service-row reveal">
+                    <div class="row-num">/03</div>
+                    <div class="row-content">
+                        <h3 class="row-title">Product Validation</h3>
+                        <p class="row-desc">Structured validation cycles to measure product-market fit at the earliest possible stage.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="service-row reveal">
-                <div class="row-num">/03</div>
-                <div class="row-content">
-                    <h3 class="row-title">Product Validation</h3>
-                    <p class="row-desc">Structured validation cycles to measure product-market fit at the earliest possible stage.</p>
+        <section id="experience" class="exp-section">
+            <div class="section-header reveal">
+                <p class="sec-label">/ Track record</p>
+                <h2 class="sec-title">Experience</h2>
+            </div>
+            <div class="exp-grid">
+                <div class="exp-item reveal">
+                    <div class="exp-num">.01</div>
+                    <div class="exp-visual"><canvas id="canvas-delivery"></canvas></div>
+                    <div class="exp-text"><h3>Fast product delivery</h3><p>Compressed delivery cycles designed around early-stage constraints.</p></div>
+                </div>
+                <div class="exp-item reveal delay-1">
+                    <div class="exp-num">.02</div>
+                    <div class="exp-visual"><canvas id="canvas-ideas"></canvas></div>
+                    <div class="exp-text"><h3>Early-stage ideas</h3><p>We worked with teams at zero stage — where the idea exists.</p></div>
+                </div>
+                <div class="exp-item reveal delay-2">
+                    <div class="exp-num">.03</div>
+                    <div class="exp-visual"><canvas id="canvas-validation"></canvas></div>
+                    <div class="exp-text"><h3>Product validation</h3><p>Every build included a validation framework for real signal.</p></div>
                 </div>
             </div>
+        </section>
 
-            <div class="service-row reveal">
-                <div class="row-num">/04</div>
-                <div class="row-content">
-                    <h3 class="row-title">Rapid Builds</h3>
-                    <p class="row-desc">End-to-end product delivery in compressed timelines without sacrificing engineering quality.</p>
+        <section id="process" class="process-section">
+            <div class="section-header reveal">
+                <p class="sec-label">/ Process</p>
+                <h2 class="sec-title">How it worked</h2>
+            </div>
+            <div class="process-grid">
+                <div class="step-item reveal">
+                    <div class="step-num">01</div>
+                    <h3>Idea breakdown</h3>
+                    <p>Deconstructing the core hypothesis into testable components.</p>
+                </div>
+                <div class="step-item reveal delay-1">
+                    <div class="step-num">02</div>
+                    <h3>Build</h3>
+                    <p>Focused engineering sprint — only what's needed for a working system.</p>
+                </div>
+                <div class="step-item reveal delay-2">
+                    <div class="step-num">03</div>
+                    <h3>Validation</h3>
+                    <p>Structured testing with real users to measure and iterate.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-wrap">
+                <div class="contact-info reveal">
+                    <p class="sec-label">/ Get in touch</p>
+                    <h2 class="sec-title">Start a<br>discussion.</h2>
+                    <p class="contact-desc">Tell us what you're building. We review inquiries for select collaborations.</p>
+                </div>
+                <div class="contact-form reveal">
+                    <form id="mainForm">
+                        <div class="field"><label>Name</label><input type="text" id="nameInput" placeholder="Name" required></div>
+                        <div class="field"><label>Email</label><input type="email" id="emailInput" placeholder="Email" required></div>
+                        <div class="field">
+                            <label>Need</label>
+                            <select id="needSelect" required>
+                                <option value="" disabled selected>Select type</option>
+                                <option value="mvp">MVP Development</option>
+                                <option value="prototype">Interactive Prototype</option>
+                                <option value="product">Full Product System</option>
+                            </select>
+                        </div>
+                        <div class="extra-fields" id="extraFields">
+                            <textarea id="detailsArea" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn magnetic" data-dist="15">Send Message →</button>
+                    </form>
+                    <div id="successMsg" class="success-msg">✦ Message sent successfully.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 PRODEX LABS</p>
+        <p>Ukraine / Remote</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
