@@ -1,0 +1,135 @@
+:root {
+    --bg: #020202;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --accent: #f2ff00; 
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+#systemCanvas {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+}
+
+.noise-overlay {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.grid-overlay {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background-image: 
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+}
+
+.premium-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 6%;
+    position: fixed; width: 100%; top: 0; z-index: 100;
+    border-bottom: 1px solid var(--border);
+    background: rgba(2, 2, 2, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 1.2rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+}
+.logo span { color: var(--accent); }
+
+.btn-primary {
+    background: transparent; color: var(--text-main);
+    padding: 10px 24px; border-radius: 4px;
+    border: 1px solid var(--border);
+    text-decoration: none; font-size: 0.85rem; font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    border-color: var(--accent); color: var(--accent);
+}
+
+.hero-canvas {
+    min-height: 100vh; position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: 120px 6% 80px; text-align: center;
+}
+
+.hero-content {
+    max-width: 900px; display: flex; flex-direction: column; align-items: center;
+}
+
+.badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 30px;
+    padding: 8px 16px; border: 1px solid var(--border); border-radius: 20px;
+    background: rgba(255,255,255,0.02);
+}
+.badge .dot {
+    width: 6px; height: 6px; background: var(--accent);
+    border-radius: 50%; box-shadow: 0 0 12px var(--accent);
+}
+
+.hero-h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95; font-weight: 700; letter-spacing: -0.03em;
+    margin-bottom: 32px;
+}
+.highlight {
+    color: var(--accent);
+    text-shadow: 0 0 40px rgba(242, 255, 0, 0.2);
+}
+
+.hero-sub {
+    color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;
+    max-width: 580px; margin-bottom: 48px; font-weight: 400;
+}
+
+.btn-demo-large {
+    background: var(--text-main); color: var(--bg);
+    padding: 16px 36px; border-radius: 4px;
+    display: inline-flex; align-items: center; gap: 12px;
+    text-decoration: none; font-weight: 600; font-size: 0.9rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+}
+.btn-demo-large .icon {
+    width: 14px; height: 14px; background: var(--accent); border-radius: 2px;
+}
+.btn-demo-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+}
+
+.reveal {
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .hero-h1 { font-size: 2.5rem; }
+    .hero-canvas { text-align: left; align-items: flex-start; padding-top: 150px; }
+    .hero-content { align-items: flex-start; }
+}
